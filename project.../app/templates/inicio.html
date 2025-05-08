@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron p-4 bg-light rounded-3">
+    <h1 class="display-4">Información sobre VIH, SIDA y VPH</h1>
+    <p class="lead">Portal informativo para la prevención, detección y tratamiento del VIH, SIDA y el Virus del Papiloma Humano.</p>
+    <hr class="my-4">
+    <p>La información correcta es fundamental para prevenir estas infecciones y mantener una buena salud sexual.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">VIH</h2>
+            </div>
+            <div class="card-body">
+                <p>El Virus de Inmunodeficiencia Humana (VIH) es un virus que ataca el sistema inmunitario del cuerpo. Si no se trata, puede llevar al SIDA.</p>
+                <h3 class="h6">Transmisión:</h3>
+                <ul>
+                    <li>Relaciones sexuales sin protección</li>
+                    <li>Compartir agujas o jeringas</li>
+                    <li>De madre a hijo durante el embarazo, parto o lactancia</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+                <h2 class="h5 mb-0">SIDA</h2>
+            </div>
+            <div class="card-body">
+                <p>El Síndrome de Inmunodeficiencia Adquirida (SIDA) es la etapa avanzada de la infección por VIH cuando el sistema inmunitario está gravemente dañado.</p>
+                <h3 class="h6">Síntomas comunes:</h3>
+                <ul>
+                    <li>Pérdida rápida de peso</li>
+                    <li>Fiebre recurrente</li>
+                    <li>Fatiga extrema</li>
+                    <li>Infecciones oportunistas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h2 class="h5 mb-0">VPH</h2>
+            </div>
+            <div class="card-body">
+                <p>El Virus del Papiloma Humano (VPH) es la infección de transmisión sexual más común. Algunos tipos pueden causar cáncer.</p>
+                <h3 class="h6">Consideraciones importantes:</h3>
+                <ul>
+                    <li>Existe vacuna preventiva</li>
+                    <li>Muchas personas no presentan síntomas</li>
+                    <li>Puede causar verrugas genitales y varios tipos de cáncer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <h3 class="h4">La detección temprana salva vidas</h3>
+            <p>Las pruebas regulares son fundamentales para la detección temprana del VIH y del VPH. Consulta la sección de <a href="{{ url_for('recomendaciones.index') }}">Recomendaciones</a> para más información o <a href="{{ url_for('citas.agendar') }}">Agenda una cita</a> con nuestros especialistas.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
