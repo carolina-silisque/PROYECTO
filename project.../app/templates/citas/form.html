@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Agendar Cita</h1>
+<p class="lead">Completa el formulario para solicitar una cita con nuestros especialistas.</p>
+
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" novalidate>
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-3">
+                        {{ form.nombre.label(class="form-label") }}
+                        {{ form.nombre(class="form-control" + (" is-invalid" if form.nombre.errors else "")) }}
+                        {% if form.nombre.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.nombre.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.email.label(class="form-label") }}
+                        {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else "")) }}
+                        {% if form.email.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.telefono.label(class="form-label") }}
+                        {{ form.telefono(class="form-control" + (" is-invalid" if form.telefono.errors else "")) }}
+                        {% if form.telefono.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.telefono.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form.fecha.label(class="form-label") }}
+                            {{ form.fecha(class="form-control" + (" is-invalid" if form.fecha.errors else ""), type="date") }}
+                            {% if form.fecha.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.fecha.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            {{ form.hora.label(class="form-label") }}
+                            {{ form.hora(class="form-control" + (" is-invalid" if form.hora.errors else ""), type="time") }}
+                            {% if form.hora.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.hora.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.tipo_consulta.label(class="form-label") }}
+                        {{ form.tipo_consulta(class="form-select" + (" is-invalid" if form.tipo_consulta.errors else "")) }}
+                        {% if form.tipo_consulta.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.tipo_consulta.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.comentarios.label(class="form-label") }}
+                        {{ form.comentarios(class="form-control", rows="3") }}
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="privacidad" required>
+                        <label class="form-check-label" for="privacidad">Acepto la política de privacidad y el tratamiento de mis datos</label>
+                    </div>
+                    
+                    {{ form.submit(class="btn btn-primary") }}
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h2 class="h5 mb-0">Información importante</h2>
+            </div>
+            <div class="card-body">
+                <p>Una vez enviada tu solicitud, nuestro equipo se pondrá en contacto contigo para confirmar la cita.</p>
+                <p>Todas las consultas son confidenciales y están protegidas por el secreto profesional.</p>
+                <hr>
+                <h3 class="h6">Horario de atención:</h3>
+                <ul class="list-unstyled">
+                    <li>Lunes a viernes: 9:00 - 18:00</li>
+                    <li>Sábados: 9:00 - 13:00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Contacto</h2>
+            </div>
+            <div class="card-body">
+                <address>
+                    <strong>Centro de Salud Sexual</strong><br>
+                    Av. Principal #123<br>
+                    Ciudad, CP 12345<br>
+                    <abbr title="Teléfono">Tel:</abbr> (123) 456-7890
+                </address>
+                <p>Email: <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

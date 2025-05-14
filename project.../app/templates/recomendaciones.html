@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Recomendaciones</h1>
+<p class="lead">Consejos prácticos para la prevención y manejo del VIH, SIDA y VPH.</p>
+
+<div class="row mt-4">
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Recomendaciones para VIH y SIDA</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for recomendacion in recomendaciones.vih_sida %}
+                        <li class="list-group-item">{{ recomendacion }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h2 class="h5 mb-0">Recomendaciones para VPH</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for recomendacion in recomendaciones.vph %}
+                        <li class="list-group-item">{{ recomendacion }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h2 class="h5 mb-0">Pruebas de detección recomendadas</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Prueba</th>
+                        <th>Frecuencia recomendada</th>
+                        <th>Quién debe hacerla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prueba de VIH</td>
+                        <td>Al menos una vez al año si se tienen factores de riesgo</td>
+                        <td>Todas las personas sexualmente activas, especialmente aquellas con múltiples parejas</td>
+                    </tr>
+                    <tr>
+                        <td>Papanicolaou</td>
+                        <td>Cada 3 años entre los 21 y 65 años</td>
+                        <td>Mujeres</td>
+                    </tr>
+                    <tr>
+                        <td>Prueba de VPH</td>
+                        <td>Cada 5 años a partir de los 30 años</td>
+                        <td>Mujeres</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-warning mt-4">
+    <h3 class="h4">Recuerda:</h3>
+    <p>Estas recomendaciones son generales. Para consejos personalizados, consulta siempre con un profesional de la salud.</p>
+    <a href="{{ url_for('citas.agendar') }}" class="btn btn-primary">Agenda una consulta</a>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Recursos Informativos</h1>
+<p class="lead">Encuentra aquí material educativo, guías y recursos relacionados con el VIH, SIDA y VPH.</p>
+
+<div class="row mt-4">
+    {% for recurso in recursos %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ recurso.titulo }}</h5>
+                <p class="card-text">{{ recurso.descripcion }}</p>
+                <a href="{{ recurso.enlace }}" class="btn btn-primary">Ver recurso</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-5">
+    <h2>Videos Educativos</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">¿Qué es el VIH y cómo prevenirlo?</h5>
+                    <p class="card-text">Video informativo sobre la transmisión y prevención del VIH.</p>
+                    <p class="text-muted">(Aquí se insertaría un video educativo)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Importancia de la vacuna contra el VPH</h5>
+                    <p class="card-text">Información sobre los beneficios de la vacunación contra el VPH.</p>
+                    <p class="text-muted">(Aquí se insertaría un video educativo)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h2>Organizaciones y Referencias</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h5>Organización Mundial de la Salud (OMS)</h5>
+            <p>Información actualizada sobre VIH, SIDA y VPH a nivel mundial.</p>
+            <a href="https://www.who.int" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
+        </li>
+        <li class="list-group-item">
+            <h5>ONUSIDA</h5>
+            <p>Programa conjunto de las Naciones Unidas sobre el VIH/SIDA.</p>
+            <a href="https://www.unaids.org" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
+        </li>
+        <li class="list-group-item">
+            <h5>Centros para el Control y Prevención de Enfermedades (CDC)</h5>
+            <p>Recursos educativos y guías de prevención.</p>
+            <a href="https://www.cdc.gov" target="_blank" class="btn btn-sm btn-outline-primary">Visitar sitio</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
